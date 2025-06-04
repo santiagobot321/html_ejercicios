@@ -112,18 +112,18 @@ nav a {
 .cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px; /* Espacio entre tarjetas */
+  gap: 80px; /* Espacio entre tarjetas */
   justify-content: center; /*Ajustar de manera horizontal*/
   margin-top: 100px;
 }
 
 .card {
-  flex: calc(50% - 20px); /* 2 por fila con espacio */
   background:#F3F3F3;
   border-radius: 30px;
   justify-content: center;
   display: flex;
   gap: 50px;
+  padding: 50px;
 }
 
 .card_in {
@@ -142,4 +142,8 @@ nav a {
 
 .card.dark{
   background: #191A23;
+}
+
+.card.dark h4{
+  text-decoration: white;
 }
