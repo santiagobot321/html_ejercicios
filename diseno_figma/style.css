@@ -178,22 +178,39 @@ nav a {
 .letmake{
   display: flex;
   background: #F3F3F3;
-  padding: 20px;
-  justify-content: space-between;
-  margin: 200px;
-  border-radius: 40px;
-  
+  align-items: center;
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-top: 150px;
+  border-radius: 20px;
 }
+
+
 
 .insideletmake{
   display: flex;
   flex-direction: column;
-  padding: 50px;
-  
-  justify-content: center;
+  padding: 40px;
+}
+
+.insideletmake h1{
+  font-size: 30px;
+}
+
+.insideletmake p {
+  font-size: 15px;
 }
 
 .insideletmake button{
-  justify-content: flex-start;
-  align-items: flex-start;
+  margin-right: 150px;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #F3F3F3;
+  background: #191A23;
+}
+
+.letmake img{
+  position: absolute;
+  padding-left: 600px;
 }
