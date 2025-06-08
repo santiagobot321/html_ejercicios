@@ -3,7 +3,6 @@ body {
     background-size: cover;
     margin: 15px;
     font-family: "Space Grotesk", sans-serif;
-    font-optical-sizing: auto;
     font-style: normal;
 }
 
@@ -46,6 +45,10 @@ nav ul a{
     gap: 100px;
 }
 
+.hero img{
+  width: 400px;
+}
+
 .herone{
     color: #fff3b0;
     font-size: 40px;
@@ -60,7 +63,7 @@ nav ul a{
 
 .herone button{
     padding: 10px 40px;
-    background: #e09f3e;
+    background: #fff3b0;;
     border-radius: 15px;
     font-size: 20px;
     cursor: pointer;
@@ -77,9 +80,147 @@ nav ul a{
   margin-top: 150px;
 }
 
+.item {
+  margin-bottom: 25px;
+}
+
 .item img{
     width: 500px;
     height: 500px;
     object-fit: cover;
+    border-radius: 15px;
+}
+
+.item button {
+  padding: 10px 40px;
+  background: #fff3b0;;
+  border-radius: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.contact {
+  margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* centra verticalmente también */
+    padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px; /* espaciado entre campos */
+  padding: 180px;
+  border-radius: 20px;
+  background: #335c67;
+}
+
+footer {
+    background-color: #1e1e1e; /* fondo oscuro */
+    color: #ffffffcc;          /* texto blanco con opacidad */
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 14px;
+    bottom: 0;
+}
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 100px;
+    gap: 40px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 40px;
+  }
+
+  .item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .herone h1 {
+    font-size: 32px;
+  }
+
+  .herone button {
+    width: 100%;
+  }
+
+  .item button {
+    width: 100%;
+  }
+
+  form {
+    padding: 80px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  .herone h1 {
+    font-size: 28px;
+  }
+
+  .herone {
+    font-size: 28px;
+  }
+
+  .contact {
+    padding: 10px;
+  }
+
+  form {
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    margin: 10px;
+  }
+
+  .herone h1 {
+    font-size: 24px;
+    padding: 10px;
+  }
+
+  .herone button,
+  .item button {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .item img {
+    height: auto;
+  }
+
+  form {
+    padding: 40px 15px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 15px 5px;
+  }
 }
 
