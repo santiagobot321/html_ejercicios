@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CRUD products</h1>
+    <section>
+        <div class="create">
+            <h4>Create new product</h4>
+
+            <label for="name">Name</label>
+            <input type="text" id="nametocreate" placeholder="Enter name...">
+            
+            <label for="price">Price</label>
+            <input type="number" name="price" id="pricetocreate" placeholder="Enter price...">
+            
+            <button id="btnadd">Add product</button>
+        </div>
+
+        <div class="update">
+            <h4>Update a product</h4>
+
+            <!-- 1. Buscar por nombre (o por ID si usas uno único) -->
+            <label for="nametoupdate">Name of the product to update</label>
+            <input type="text" id="nametoupdate" placeholder="Enter name..." />
+
+            <!-- 2. Campos editables -->
+            <label for="updated-name">New name</label>
+            <input type="text" id="updated-name" placeholder="New name" />
+
+            <label for="updated-price">New price</label>
+            <input type="number" id="updated-price" placeholder="New price" />
+
+            <!-- 3. Botón para actualizar -->
+            <button id="update-btn">Update Product</button>
+        </div>
+
+        <div class="delete">
+            <h4>Delete a product</h4>
+
+            <label for="nametodelete">Name of the product to delete</label>
+            <input type="text" name="namedelete" id="deletep" placeholder="Enter name">
+
+            <button>Delete</button>
+        </div>
+
+        <div class="product-list">
+            <h4>Product List</h4>
+            <ul id="product-list"></ul>
+
+            <button>Show products</button>
+        </div>
+
+
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+</html>
