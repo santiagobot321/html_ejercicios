@@ -1,12 +1,34 @@
-import http from 'http'
+// Comenzamos importando express para poder hacer el servidor
+import express from 'express'
 
-const server = http.createServer((request, response) => {
-    console.log("Server is running")
-    response.writeHead(200, {'content-type': "application/json"})
-    response.end(JSON.stringify({message: "Hola desde mi honeypott"}))
+// Acá declaramos un objeto express con todas sus funcionalidades
+const server = express()
+
+// Abrimos el servidor
+server.express()
+
+// 
+class usuarios {
+    constructor(id,name,email,passwd) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.passwd = passwd;
+    }
+}
+
+
+
+server.get('/server/usuarios',(req,res) =>{
+
 })
 
-server.listen(3000, () => {
-    console.log("Server is running on port 3000")
+
+
+
+
+
+server.listen(3000,() => {
+    console.log(`Server is listening on port 3000`)
 })
 
