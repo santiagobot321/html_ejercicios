@@ -1,0 +1,88 @@
+{
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Nuevo Nombre"
+    },
+    {
+      "id": "2",
+      "nombre": "Arroz",
+      "precio": 6500
+    },
+    {
+      "id": 3,
+      "nombre": "coco",
+      "precio": 3500
+    },
+    {
+      "id": 3,
+      "nombre": "coco",
+      "precio": 3500
+    },
+    {
+      "id": 3,
+      "nombre": "coco",
+      "precio": 3500
+    },
+    {
+      "id": 3,
+      "nombre": "coco",
+      "precio": 3500
+    },
+    {
+      "id": 3,
+      "nombre": "coco",
+      "precio": 3500
+    },
+    {
+      "id": 3,
+      "nombre": "coco",
+      "precio": 3500
+    },
+    {
+      "id": 3,
+      "nombre": "coco",
+      "precio": 3500
+    },
+    {
+      "id": 3,
+      "nombre": "coco",
+      "precio": 3500
+    },
+    {
+      "id": 3,
+      "nombre": "coco",
+      "precio": 3500
+    },
+    {
+      "id": 3,
+      "nombre": "coco",
+      "precio": 3500
+    },
+    {
+      "id": 3,
+      "nombre": "coco",
+      "precio": 3500
+    },
+    {
+      "id": 3,
+      "nombre": "coco",
+      "precio": 3500
+    },
+    {
+      "id": 3,
+      "nombre": "coco",
+      "precio": 3500
+    },
+    {
+      "id": 3,
+      "nombre": "coco",
+      "precio": 3500
+    },
+    {
+      "id": 3,
+      "nombre": "coco",
+      "precio": 3500
+    }
+  ]
+}

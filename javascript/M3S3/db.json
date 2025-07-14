@@ -1,0 +1,40 @@
+{
+  "productos": [
+    {
+      "id": "2",
+      "nombre": "Mouse",
+      "categoria": "Accesorios",
+      "precio": 25
+    },
+    {
+      "id": "3",
+      "nombre": "Teclado",
+      "categoria": "Accesorios",
+      "precio": 45
+    },
+    {
+      "id": "4",
+      "nombre": "Smartphone",
+      "categoria": "Tecnología",
+      "precio": 800
+    },
+    {
+      "nombre": "Silla Gamer",
+      "categoria": "Muebles",
+      "precio": 300,
+      "id": "5"
+    },
+    {
+      "id": "1a77",
+      "nombre": "Silla Gamer",
+      "categoria": "Muebles",
+      "precio": 300
+    },
+    {
+      "id": "e272",
+      "nombre": "Laptop",
+      "categoria": "Tecnologíass",
+      "precio": 1200
+    }
+  ]
+}

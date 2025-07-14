@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Interfaz con Local Storage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    input, button {
+      margin: 5px 0;
+      padding: 5px;
+    }
+    #output {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #aaa;
+    }
+  </style>
+</head>
+<body>
+  <h2>Formulario de Usuario</h2>
+  <form id="userForm">
+    <label>Nombre:</label><br>
+    <input type="text" id="name" required><br>
+
+    <label>Edad:</label><br>
+    <input type="number" id="age" required><br>
+
+    <button type="submit">Guardar Datos</button>
+  </form>
+
+  <button id="clearBtn">Limpiar Datos</button>
+
+  <div id="output"></div>
+  <p>Interacciones en esta sesión: <span id="counter">0</span></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
