@@ -41,78 +41,38 @@
       "dateOfAdmission": "12-Jan-2024"
     }
   ],
-  "courses": [
+  "events": [
     {
       "id": "1",
-      "title": "Introducción a JavaScript",
-      "description": "Curso básico de JavaScript",
+      "title": "Concierto acdc",
+      "description": "Rock al parque",
       "startDate": "10-Jul-2025",
-      "duration": "4 semanas"
+      "capacity": "900",
+      "date": "15-Dec-2025"
     },
     {
       "id": "2",
       "title": "Introducción a la Física",
       "description": "Curso básico de física",
       "startDate": "05-Jul-2025",
-      "duration": "4 semanas"
+      "capacity": "40"
     },
     {
       "id": "3",
       "title": "Introducción al Cálculo",
       "description": "Curso básico de cálculo",
       "startDate": "15-Jun-2025",
-      "duration": "4 semanas"
+      "capacity": "40"
     },
     {
       "id": "4",
       "title": "Programación en Python",
       "description": "Curso completo de Python",
       "startDate": "20-Jul-2025",
-      "duration": "6 semanas"
-    },
-    {
-      "id": "5",
-      "title": "HTML y CSS",
-      "description": "Fundamentos de maquetación web",
-      "startDate": "01-Jul-2025",
-      "duration": "3 semanas"
+      "capacity": "60"
     }
   ],
-  "enrollments": [
-    {
-      "id": "1",
-      "userId": 2,
-      "courseId": 1
-    },
-    {
-      "id": "2",
-      "userId": 2,
-      "courseId": 5
-    },
-    {
-      "id": "3",
-      "userId": 3,
-      "courseId": 2
-    },
-    {
-      "id": "4",
-      "userId": 3,
-      "courseId": 3
-    },
-    {
-      "id": "5",
-      "userId": 4,
-      "courseId": 4
-    },
-    {
-      "id": "6",
-      "userId": 4,
-      "courseId": 1
-    },
-    {
-      "id": "7",
-      "userId": 4,
-      "courseId": 5
-    }
-  ]
+  "enrollments": [{
+    
+  }]
 }
