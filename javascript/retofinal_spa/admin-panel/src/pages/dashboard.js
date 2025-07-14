@@ -1,22 +1,20 @@
-// dashboard.js limpio y moderno usando addEventListener
-
 const user = JSON.parse(localStorage.getItem("user"));
 
 if (!user || user.role !== "admin") {
   window.location.href = "/index.html";
 } else {
-  document.querySelector("h1").textContent = `Welcome Admin, ${user.name}`;
+  document.querySelector("h1").textContent = `Welcome Admin`;
   loadDashboard();
 }
 
 async function loadDashboard() {
   const userContainer = document.getElementById("users-list");
-  const courseContainer = document.getElementById("courses-list");
+  const eventContainer = document.getElementById("events-list");
   userContainer.innerHTML = "";
-  courseContainer.innerHTML = "";
+  eventContainer.innerHTML = "";
 
   const users = await fetch("http://localhost:3000/users").then(res => res.json());
-  const courses = await fetch("http://localhost:3000/courses").then(res => res.json());
+  const events = await fetch("http://localhost:3000/events").then(res => res.json());
 
   users.forEach(user => {
     const div = document.createElement("div");
@@ -28,14 +26,17 @@ async function loadDashboard() {
     userContainer.appendChild(div);
   });
 
-  courses.forEach(course => {
+  events.forEach(event => {
     const div = document.createElement("div");
     div.innerHTML = `
-      <p>${course.title} - ${course.description}</p>
-      <button class="delete-course" data-id="${course.id}">Delete</button>
-      <button class="edit-course" data-id="${course.id}" data-title="${course.title}" data-description="${course.description}">Edit</button>
+      <h2>${event.title}</h2>  
+      <h3>${event.description}</h3> 
+      <p>Start Date: ${event.startDate}</p> 
+      <p>Capacity: ${event.capacity}</p>
+      <button class="delete-event" data-id="${event.id}">Delete</button>
+      <button class="edit-event" data-id="${event.id}" data-title="${event.title}" data-description="${event.description}">Edit</button>
     `;
-    courseContainer.appendChild(div);
+    eventContainer.appendChild(div);
   });
 
   attachEventListeners();
@@ -50,12 +51,12 @@ function attachEventListeners() {
     btn.addEventListener("click", () => editUser(btn.dataset.id, btn.dataset.name, btn.dataset.email));
   });
 
-  document.querySelectorAll(".delete-course").forEach(btn => {
-    btn.addEventListener("click", () => deleteCourse(btn.dataset.id));
+  document.querySelectorAll(".delete-event").forEach(btn => {
+    btn.addEventListener("click", () => deleteEvent(btn.dataset.id));
   });
 
-  document.querySelectorAll(".edit-course").forEach(btn => {
-    btn.addEventListener("click", () => editCourse(btn.dataset.id, btn.dataset.title, btn.dataset.description));
+  document.querySelectorAll(".edit-event").forEach(btn => {
+    btn.addEventListener("click", () => editEvent(btn.dataset.id, btn.dataset.title, btn.dataset.description));
   });
 }
 
@@ -80,17 +81,19 @@ if (userForm) {
 }
 
 // Formulario para crear curso
-const courseForm = document.getElementById("create-course-form");
+const courseForm = document.getElementById("create-event-form");
 if (courseForm) {
   courseForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const title = document.getElementById("newTitle").value;
     const description = document.getElementById("newDescription").value;
+    const date = document.getElementById("newDate").value
+    const capacity = document.getElementById("newCapacity").value
 
-    await fetch("http://localhost:3000/courses", {
+    await fetch("http://localhost:3000/events", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title, description })
+      body: JSON.stringify({ title, description,date,capacity })
     });
 
     courseForm.reset();
@@ -103,8 +106,8 @@ async function deleteUser(id) {
   loadDashboard();
 }
 
-async function deleteCourse(id) {
-  await fetch(`http://localhost:3000/courses/${id}`, { method: "DELETE" });
+async function deleteEvent(id) {
+  await fetch(`http://localhost:3000/events/${id}`, { method: "DELETE" });
   loadDashboard();
 }
 
@@ -120,14 +123,16 @@ function editUser(id, currentName, currentEmail) {
   }
 }
 
-function editCourse(id, currentTitle, currentDescription) {
+function editEvent(id, currentTitle, currentDescription,currentDate,currentCapacity) {
   const title = prompt("New title:", currentTitle);
   const description = prompt("New description:", currentDescription);
-  if (title && description) {
-    fetch(`http://localhost:3000/courses/${id}`, {
+  const date = prompt("New date", currentDate)
+  const capacity = prompt("New capacity", currentCapacity)
+  if (title && description && date && capacity) {
+    fetch(`http://localhost:3000/events/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title, description })
+      body: JSON.stringify({ title, description, date, capacity })
     }).then(() => loadDashboard());
   }
 }

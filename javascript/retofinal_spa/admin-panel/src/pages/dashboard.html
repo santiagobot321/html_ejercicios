@@ -29,18 +29,20 @@
 
   <!-- Sección para crear curso -->
   <section>
-    <h2>Create Course</h2>
-    <form id="create-course-form">
+    <h2>Create Event</h2>
+    <form id="create-event-form">
       <input type="text" id="newTitle" placeholder="Course Title" required />
       <input type="text" id="newDescription" placeholder="Course Description" required />
+      <input type="date" id="newDate" placeholder="Date" required />
+      <input type="number"  id="newCapacity" placeholder="Capacity" required>
       <button type="submit">Create Course</button>
     </form>
   </section>
 
   <!-- Lista de cursos -->
   <section>
-    <h2>Courses</h2>
-    <div id="courses-list"></div>
+    <h2>Event</h2>
+    <div id="events-list"></div>
   </section>
 
   <!-- Botón de logout -->

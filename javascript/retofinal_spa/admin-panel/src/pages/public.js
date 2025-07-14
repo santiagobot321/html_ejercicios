@@ -7,7 +7,7 @@ async function loadCourses() {
     .then(res => res.json())
     .then(data => data.filter(enrollment => Number(enrollment.userId) === Number(user.id)));
 
-  const allCourses = await fetch("http://localhost:3000/courses")
+  const allCourses = await fetch("http://localhost:3000/events")
     .then(res => res.json());
 
   const enrolledCourses = allCourses.filter(curso =>
@@ -24,7 +24,7 @@ async function loadCourses() {
   // Mostrar cursos inscritos
   if (enrolledCourses.length > 0) {
     const title = document.createElement("h2");
-    title.textContent = "Your enrolled courses:";
+    title.textContent = "Your enrolled events:";
     courseList.appendChild(title);
 
     enrolledCourses.forEach(curso => {
@@ -32,6 +32,7 @@ async function loadCourses() {
       div.innerHTML = `
         <h3>${curso.title}</h3>
         <p>${curso.description}</p>
+        <button class="delete-btn" data-id="${curso.id}">Delete</button>
       `;
       courseList.appendChild(div);
     });
@@ -40,7 +41,7 @@ async function loadCourses() {
   // Mostrar cursos disponibles con botón de registro
   if (availableCourses.length > 0) {
     const title = document.createElement("h2");
-    title.textContent = "Courses available to enroll:";
+    title.textContent = "Events available to enroll:";
     availableList.appendChild(title);
 
     availableCourses.forEach(curso => {
@@ -71,6 +72,22 @@ async function loadCourses() {
         window.location.reload(); // Recarga para actualizar lista
       });
     });
+
+    // boton borrar 
+    document.querySelectorAll(".delete-btn").forEach(btn => {
+      btn.addEventListener("click", async (e) => {
+        const courseId = Number(e.target.dataset.id);
+
+        await fetch(`http://localhost:3000/enrollments/${btn.dataset.id}`, {
+          method: "DELETE"
+        });
+
+        alert("Deleted successfully!");
+        window.location.reload(); // Recarga para actualizar lista
+      });
+    });
+
+
   }
 }
 
@@ -85,3 +102,4 @@ if (user) {
 } else {
   window.location.href = "/index.html";
 }
+
