@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+  <h1>Welcome Admin</h1>
+
+  <!-- Sección para crear usuario -->
+  <section>
+    <h2>Create User</h2>
+    <form id="create-user-form">
+      <input type="text" id="newName" placeholder="Name" required />
+      <input type="email" id="newEmail" placeholder="Email" required />
+      <input type="text" id="newRole" placeholder="Role (admin/user)" required />
+      <button type="submit">Create User</button>
+    </form>
+  </section>
+
+  <!-- Lista de usuarios -->
+  <section>
+    <h2>Users</h2>
+    <div id="users-list"></div>
+  </section>
+
+  <!-- Sección para crear curso -->
+  <section>
+    <h2>Create Course</h2>
+    <form id="create-course-form">
+      <input type="text" id="newTitle" placeholder="Course Title" required />
+      <input type="text" id="newDescription" placeholder="Course Description" required />
+      <button type="submit">Create Course</button>
+    </form>
+  </section>
+
+  <!-- Lista de cursos -->
+  <section>
+    <h2>Courses</h2>
+    <div id="courses-list"></div>
+  </section>
+
+  <!-- Botón de logout -->
+  <button id="logout">Logout</button>
+
+  <script type="module" src="/src/pages/dashboard.js"></script>
+</body>
+</html>
