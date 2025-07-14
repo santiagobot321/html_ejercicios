@@ -1,3 +1,8 @@
+Coder: Santiago Botero Ramírez
+Clan: Linus
+email: boteroramirezsantiago@gmail.com
+C.C: 1020490469
+
 This project is a simple event management and user registration platform.
 
 To display correctly, run the following commands:
@@ -23,4 +28,3 @@ Finally, there is also a logout button to exit the session and return to the mai
 
 Admin credentials => email: admin@admin.com passwd: admin123
 Visitor credential => email: santi@santi.com passwd: coco123
-
